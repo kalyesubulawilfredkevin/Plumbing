@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+<!-- STITCH_THREEJS_START:ANIMATION_3 class="fixed inset-0 w-full h-full bg-transparent" -->
+<div class="fixed inset-0 w-full h-full bg-transparent" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_3" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_3');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(window.devicePixelRatio);
+container.appendChild(renderer.domElement);
+
+// Create a stylized 3D water droplet
+const geometry = new THREE.IcosahedronGeometry(1, 15);
+const material = new THREE.MeshPhongMaterial({
+    color: 0x00B4D8,
+    transparent: true,
+    opacity: 0.8,
+    shininess: 100,
+    reflectivity: 1
+});
+
+const droplet = new THREE.Mesh(geometry, material);
+
+// Deform to look like a droplet
+const position = geometry.attributes.position;
+const v = new THREE.Vector3();
+for (let i = 0; i < position.count; i++) {
+    v.fromBufferAttribute(position, i);
+    const y = v.y;
+    // Taper the top
+    const taper = Math.max(0, 1.0 - y);
+    v.x *= (0.5 + taper * 0.5);
+    v.z *= (0.5 + taper * 0.5);
+    position.setXYZ(i, v.x, v.y, v.z);
+}
+
+scene.add(droplet);
+
+const light1 = new THREE.DirectionalLight(0xffffff, 1);
+light1.position.set(5, 5, 5);
+scene.add(light1);
+
+const light2 = new THREE.AmbientLight(0xffffff, 0.5);
+scene.add(light2);
+
+camera.position.z = 3;
+
+let mouseX = 0;
+let mouseY = 0;
+
+window.addEventListener('mousemove', (e) => {
+    mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+    mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+});
+
+function animate() {
+    requestAnimationFrame(animate);
+    
+    droplet.rotation.y += 0.01;
+    droplet.position.x += (mouseX * 0.5 - droplet.position.x) * 0.05;
+    droplet.position.y += (mouseY * 0.5 - droplet.position.y) * 0.05;
+    
+    // Pulse effect
+    const scale = 1 + Math.sin(Date.now() * 0.002) * 0.05;
+    droplet.scale.set(scale, scale, scale);
+    
+    renderer.render(scene, camera);
+}
+
+window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+});
+
+animate();
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_3 -->
+</body>
+</html>

@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HydroPrecision | Master Plumbers &amp; High-Tech Water Solutions</title>
+<meta content="Premium plumbing services for luxury estates. HydroPrecision provides 24/7 emergency repairs, leak detection, and master craftsmanship with modern smart-home technology." name="description"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&amp;family=Inter:wght@300;400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Scripts -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#ffa46c",
+                        "inverse-surface": "#263143",
+                        "on-tertiary-fixed": "#321200",
+                        "inverse-primary": "#a0c9ff",
+                        "surface-container": "#e7eeff",
+                        "secondary-fixed-dim": "#4cd6fb",
+                        "background": "#f9f9ff",
+                        "secondary-container": "#50d9fe",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f0f3ff",
+                        "tertiary-container": "#7a3700",
+                        "surface-container-highest": "#d8e3fb",
+                        "on-secondary-container": "#005c70",
+                        "on-surface-variant": "#42474f",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#b3ebff",
+                        "secondary": "#00677d",
+                        "surface-dim": "#cfdaf2",
+                        "on-secondary-fixed-variant": "#004e5f",
+                        "outline": "#727780",
+                        "surface-tint": "#2d6197",
+                        "outline-variant": "#c2c7d1",
+                        "error": "#ba1a1a",
+                        "surface": "#f9f9ff",
+                        "primary": "#00355f",
+                        "on-surface": "#111c2d",
+                        "tertiary-fixed": "#ffdbc8",
+                        "surface-container-high": "#dee8ff",
+                        "on-tertiary-fixed-variant": "#753400",
+                        "on-primary-fixed": "#001c37",
+                        "on-background": "#111c2d",
+                        "on-primary-container": "#8ebdf9",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#a0c9ff",
+                        "on-primary-fixed-variant": "#07497d",
+                        "inverse-on-surface": "#ecf1ff",
+                        "primary-container": "#0f4c81",
+                        "on-secondary-fixed": "#001f27",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f9f9ff",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#572500",
+                        "surface-variant": "#d8e3fb",
+                        "tertiary-fixed-dim": "#ffb68b",
+                        "primary-fixed": "#d2e4ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "margin-desktop": "48px",
+                        "container-max": "1280px",
+                        "section-gap": "120px",
+                        "gutter": "24px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Poppins"],
+                        "body-md": ["Inter"],
+                        "display-lg-mobile": ["Poppins"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Poppins"],
+                        "headline-lg": ["Poppins"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .service-card {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        .tilt-inner {
+            transition: transform 0.2s ease-out;
+        }
+        .emergency-pulse {
+            animation: pulse-glow 2s infinite;
+        }
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(255, 122, 0, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 122, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 122, 0, 0); }
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .mask-insight {
+            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 bg-white/60 backdrop-blur-xl border-b border-white/20 shadow-[0px_10px_30px_rgba(15,76,129,0.06)]">
+<nav class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md font-bold text-primary tracking-tight" href="/">HydroPrecision</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#services">Services</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#about">About</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#insights">Why Us</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#testimonials">Reviews</a>
+<a class="bg-primary text-on-primary px-6 py-3 rounded-full font-label-md text-label-md hover:scale-105 transition-transform active:scale-95 shadow-lg" href="#contact">Request Service</a>
+</div>
+<!-- Mobile Menu Toggle -->
+<button aria-label="Menu" class="md:hidden text-primary p-2 flex items-center" id="mobile-menu-btn">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<!-- Mobile Dropdown -->
+<div class="hidden flex-col bg-white/95 backdrop-blur-2xl border-b border-outline-variant p-margin-mobile md:hidden" id="mobile-menu">
+<a class="py-4 border-b border-outline-variant/30 font-label-md" href="#services">Services</a>
+<a class="py-4 border-b border-outline-variant/30 font-label-md" href="#about">About</a>
+<a class="py-4 border-b border-outline-variant/30 font-label-md" href="#insights">Why Us</a>
+<a class="py-4 border-b border-outline-variant/30 font-label-md" href="#testimonials">Reviews</a>
+<a class="mt-4 bg-primary text-on-primary text-center py-4 rounded-xl font-label-md" href="#contact">Request Service</a>
+</div>
+</header>
+<!-- Floating Actions -->
+<aside class="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 flex flex-col gap-4">
+<a aria-label="Call Now" class="bg-white/80 backdrop-blur-xl text-primary p-4 rounded-full shadow-xl border border-white/30 hover:scale-110 transition-transform animate-pulse flex items-center justify-center" href="tel:+1234567890">
+<span class="material-symbols-outlined">call</span>
+</a>
+<a aria-label="WhatsApp" class="bg-[#25D366] text-white p-4 rounded-full shadow-xl hover:scale-110 transition-transform flex items-center justify-center" href="https://wa.me/1234567890">
+<span class="material-symbols-outlined">chat</span>
+</a>
+</aside>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center overflow-hidden pt-20">
+<!-- Full Bleed Shader Background -->
+<div class="absolute inset-0 z-0 opacity-60">
+<iframe class="w-full h-full border-none" srcdoc='&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"/&gt;
+&lt;meta content="width=device-width,initial-scale=1.0" name="viewport"/&gt;
+&lt;style&gt;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background: #f9f9ff; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;canvas id="shader-canvas" style="display:block;width:100%;height:100%"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+(function() {
+  const canvas = document.getElementById("shader-canvas");
+  function syncSize() {
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width = w; canvas.height = h;
+    }
+  }
+  window.addEventListener("resize", syncSize);
+  syncSize();
+  const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+varying vec2 v_texCoord;
+void main() {
+    vec2 uv = v_texCoord;
+    float wave1 = sin(uv.x * 3.0 + u_time * 0.5) * 0.5 + 0.5;
+    float wave2 = sin(uv.y * 2.5 + u_time * 0.8) * 0.5 + 0.5;
+    float wave3 = sin((uv.x + uv.y) * 4.0 - u_time * 0.4) * 0.5 + 0.5;
+    vec3 color1 = vec3(0.058, 0.298, 0.505);
+    vec3 color2 = vec3(0.0, 0.706, 0.847);
+    vec3 color3 = vec3(0.973, 0.98, 0.988);
+    vec3 finalColor = mix(color1, color2, wave1 * wave2);
+    finalColor = mix(finalColor, color3, wave3 * 0.1);
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, "a_position");
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, "u_time");
+  function render(t) {
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    gl.uniform1f(uTime, t * 0.001);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;'></iframe>
+</div>
+<div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full grid md:grid-cols-2 gap-gutter items-center py-12 md:py-20">
+<div class="glass-panel p-8 md:p-12 rounded-[2rem] shadow-2xl max-w-2xl reveal-hero">
+<span class="inline-block bg-secondary-container/30 text-on-secondary-container px-4 py-1 rounded-full font-label-md text-label-md mb-6 border border-secondary-container/40">Master Craftsmanship</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6 leading-tight">Elite Plumbing Solutions for Luxury Homes</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">Experience the pinnacle of residential hydraulic engineering. We provide white-glove service, non-invasive detection, and 24/7 priority response.</p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md hover:shadow-[0_0_20px_rgba(0,53,95,0.4)] transition-all flex items-center gap-2 group" href="#contact">
+                            Book Service <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">calendar_month</span>
+</a>
+<a class="bg-[#FF7A00] text-white px-8 py-4 rounded-full font-label-md text-label-md emergency-pulse flex items-center gap-2" href="tel:+1234567890">
+                            Call Emergency <span class="material-symbols-outlined text-[20px]">phone_in_talk</span>
+</a>
+</div>
+</div>
+<div class="hidden md:flex justify-center items-center h-[500px] lg:h-[600px] reveal-hero relative">
+<iframe class="w-full h-full border-none" srcdoc='&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"/&gt;
+&lt;script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"&gt;&lt;/script&gt;
+&lt;style&gt;body { margin: 0; background: transparent; overflow: hidden; }&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="canvas-container"&gt;&lt;/div&gt;
+&lt;script&gt;
+(function() {
+  const container = document.getElementById("canvas-container");
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  container.appendChild(renderer.domElement);
+  const geometry = new THREE.IcosahedronGeometry(1, 15);
+  const material = new THREE.MeshPhongMaterial({ color: 0x00B4D8, transparent: true, opacity: 0.8, shininess: 100 });
+  const droplet = new THREE.Mesh(geometry, material);
+  const position = geometry.attributes.position;
+  const v = new THREE.Vector3();
+  for (let i = 0; i &lt; position.count; i++) {
+    v.fromBufferAttribute(position, i);
+    const taper = Math.max(0, 1.0 - v.y);
+    v.x *= (0.5 + taper * 0.5);
+    v.z *= (0.5 + taper * 0.5);
+    position.setXYZ(i, v.x, v.y, v.z);
+  }
+  scene.add(droplet);
+  const light = new THREE.DirectionalLight(0xffffff, 1.5);
+  light.position.set(5, 5, 5);
+  scene.add(light);
+  scene.add(new THREE.AmbientLight(0xffffff, 0.5));
+  camera.position.z = 3.5;
+  function animate() {
+    requestAnimationFrame(animate);
+    droplet.rotation.y += 0.01;
+    droplet.scale.setScalar(1 + Math.sin(Date.now() * 0.0015) * 0.06);
+    renderer.render(scene, camera);
+  }
+  animate();
+})();
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;'></iframe>
+</div>
+</div>
+</section>
+<!-- Service Area Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+<div class="grid lg:grid-cols-2 gap-20 items-center">
+<div class="reveal-fade">
+<span class="font-label-md text-secondary tracking-widest uppercase mb-4 block">Mobile Excellence</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Service Area &amp; Rapid Fleet</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Our fleet of high-end, fully-equipped service vehicles is stationed strategically across the metropolitan area. We bring the workshop to your doorstep, ensuring every technician has the advanced diagnostic tools and genuine parts required for immediate solutions.</p>
+<div class="grid sm:grid-cols-2 gap-6 mb-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+<span class="font-label-md">Estate Districts</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+<span class="font-label-md">Coastal Residences</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+<span class="font-label-md">Luxury Business Hubs</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+<span class="font-label-md">Historical Properties</span>
+</div>
+</div>
+</div>
+<div class="relative reveal-about-right">
+<div class="rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white aspect-video bg-surface-container">
+<img alt="Professional high-end plumbing service truck" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmeUTeMUVwvb7ROPogjlTQTFMygBuwR4HzAnUvtqDLsSOCTwqd-hSBcSpQPgg4FACXzPHFb-lRF-wPM5supt4wI-7tLn-OG9wj4yB8QPKPDi9FOCuqGKU9el5Mx8-pX8qKmqcB_sUeQFI5pnJcVJ5aWH64j-kkR10b_oLy_Y9ml89jzDB8ZIw7E5Gp8vKAdY-GspScAZyi59G2icRNpl5ppkAzmcksCscT37pHAwxxbUqfZfZKb6J2tzZuPENp8Dz4qOM63DgL2uiG"/>
+</div>
+<div class="absolute -bottom-6 -left-6 glass-panel p-6 rounded-2xl shadow-xl hidden md:flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">timer</span>
+</div>
+<div>
+<p class="font-label-md text-primary font-bold">60-Min Average Arrival</p>
+<p class="text-xs text-on-surface-variant">Across all service zones</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="py-section-gap bg-surface-container-low" id="services">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Master-Grade Solutions</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Comprehensive plumbing services tailored for high-net-worth properties and critical commercial infrastructure.</p>
+</div>
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="service-card group reveal-service">
+<div class="tilt-inner glass-panel p-8 rounded-3xl h-full flex flex-col items-center text-center hover:bg-white transition-all duration-300 border border-white/40 shadow-sm hover:shadow-2xl">
+<div class="w-16 h-16 rounded-full bg-gradient-to-br from-secondary-container to-primary-container flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">emergency_home</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Emergency Repairs</h3>
+<p class="text-on-surface-variant text-sm">Rapid intervention for burst pipes and critical failures available 24/7/365.</p>
+</div>
+</div>
+<div class="service-card group reveal-service">
+<div class="tilt-inner glass-panel p-8 rounded-3xl h-full flex flex-col items-center text-center hover:bg-white transition-all duration-300 border border-white/40 shadow-sm hover:shadow-2xl">
+<div class="w-16 h-16 rounded-full bg-gradient-to-br from-secondary-container to-primary-container flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">radar</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Leak Detection</h3>
+<p class="text-on-surface-variant text-sm">Non-invasive ultrasonic imaging to locate hidden water leaks with pinpoint precision.</p>
+</div>
+</div>
+<div class="service-card group reveal-service">
+<div class="tilt-inner glass-panel p-8 rounded-3xl h-full flex flex-col items-center text-center hover:bg-white transition-all duration-300 border border-white/40 shadow-sm hover:shadow-2xl">
+<div class="w-16 h-16 rounded-full bg-gradient-to-br from-secondary-container to-primary-container flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">hot_tub</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Smart Systems</h3>
+<p class="text-on-surface-variant text-sm">Installation of tankless heaters and IoT-enabled water management systems.</p>
+</div>
+</div>
+<div class="service-card group reveal-service">
+<div class="tilt-inner glass-panel p-8 rounded-3xl h-full flex flex-col items-center text-center hover:bg-white transition-all duration-300 border border-white/40 shadow-sm hover:shadow-2xl">
+<div class="w-16 h-16 rounded-full bg-gradient-to-br from-secondary-container to-primary-container flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">apartment</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Commercial Care</h3>
+<p class="text-on-surface-variant text-sm">Industrial-grade maintenance and plumbing for large estates and commercial assets.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- About Us Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="about">
+<div class="grid lg:grid-cols-2 gap-20 items-center">
+<div class="relative reveal-about-left order-2 lg:order-1">
+<div class="rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl relative border-4 border-white">
+<img alt="Master plumber at work" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBurQC-xNckqGmNbncLmxdRzbTy_qYxSTc-lbSMgpCLt3f8IjwrgZDFivB2E4cGbJg2ncTiaPcwmLJm2lBNB8DtaybECzcl7t_SJHrZJx5Mq9Xhccp8BR7-BIb1urCdRlBsjoAf_Fe2bvbhI-SMHRbjFjlXDjcA3wI-v2yWCoONQtv_yDzTkrMqENzvIfy2-u_ni8Z2E15C0phff8JGltaOXfAPrcvwKl8q0BOOIciyuo5AH5NQ4kxBRrRYBXjvkBtCjQlOVx4mwDUv"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
+</div>
+<div class="absolute -bottom-8 -right-8 glass-panel p-8 rounded-2xl shadow-2xl border border-white/40 max-w-[240px]">
+<h3 class="font-headline-lg text-headline-lg text-primary mb-1"><span class="counter" data-target="5000">0</span>+</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">Luxury Projects Successfully Completed</p>
+</div>
+</div>
+<div class="reveal-about-right order-1 lg:order-2">
+<span class="font-label-md text-secondary tracking-widest uppercase mb-4 block">Our Legacy</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Unmatched Precision Since 2008</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Founded on the principles of engineering precision and surgical cleanliness, HydroPrecision has evolved into the region's leading plumbing firm for elite homeowners. We don't just fix leaks; we engineer flow.</p>
+<div class="space-y-6 mb-10">
+<div class="flex items-start gap-4">
+<div class="bg-surface-container-high p-3 rounded-xl text-primary shrink-0">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary font-bold">White-Glove Guarantee</h4>
+<p class="text-sm text-on-surface-variant">We leave your property in pristine condition, using protective gear and cleaning as we go.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-surface-container-high p-3 rounded-xl text-primary shrink-0">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary font-bold">Diagnostic Excellence</h4>
+<p class="text-sm text-on-surface-variant">Our master technicians utilize acoustic sensors and thermal imaging for non-invasive fixes.</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<div class="bg-white p-4 rounded-2xl border border-outline-variant text-center shadow-sm">
+<span class="font-headline-md text-headline-md text-secondary block">99.8%</span>
+<p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Success Rate</p>
+</div>
+<div class="bg-white p-4 rounded-2xl border border-outline-variant text-center shadow-sm">
+<span class="font-headline-md text-headline-md text-secondary block">24h</span>
+<p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Emergency</p>
+</div>
+<div class="bg-white p-4 rounded-2xl border border-outline-variant text-center shadow-sm">
+<span class="font-headline-md text-headline-md text-secondary block">Full</span>
+<p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Warranty</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Plumbing Insights (Blog) Section -->
+<!-- Why Choose Us Timeline -->
+<section class="py-section-gap px-margin-desktop max-w-container-max mx-auto" id="insights">
+<div class="text-center mb-16 reveal-fade">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">The HydroPrecision Difference</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Why we are the preferred choice for elite property managers.</p>
+</div>
+<div class="relative">
+<!-- Timeline vertical line -->
+<div class="absolute left-1/2 -translate-x-1/2 w-1 h-full bg-surface-container-high hidden md:block"></div>
+<div class="space-y-12">
+<div class="flex flex-col md:flex-row items-center gap-8 reveal-timeline-item">
+<div class="md:w-1/2 text-right hidden md:block">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Licensed &amp; Master Certified</h3>
+<p class="text-on-surface-variant">Every technician undergoes 500+ hours of annual specialized training in smart-home hydraulics.</p>
+</div>
+<div class="z-10 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white shrink-0 shadow-lg">1</div>
+<div class="md:w-1/2">
+<h3 class="font-headline-md text-headline-md text-primary mb-2 md:hidden">Licensed &amp; Master Certified</h3>
+<div class="glass-panel p-6 rounded-2xl md:ml-0 ml-12">
+<span class="material-symbols-outlined text-secondary block mb-2">workspace_premium</span>
+<p class="text-on-surface-variant md:hidden">Every technician undergoes 500+ hours of annual specialized training in smart-home hydraulics.</p>
+<p class="hidden md:block text-on-surface-variant">Rigorous certification standards that exceed national requirements for premium safety.</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row-reverse items-center gap-8 reveal-timeline-item">
+<div class="md:w-1/2 text-left hidden md:block">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Affordable Luxury</h3>
+<p class="text-on-surface-variant">Transparent upfront pricing with zero hidden fees. We provide value-driven high-end solutions.</p>
+</div>
+<div class="z-10 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white shrink-0 shadow-lg">2</div>
+<div class="md:w-1/2">
+<h3 class="font-headline-md text-headline-md text-primary mb-2 md:hidden">Affordable Luxury</h3>
+<div class="glass-panel p-6 rounded-2xl md:mr-0 mr-12">
+<span class="material-symbols-outlined text-secondary block mb-2">payments</span>
+<p class="text-on-surface-variant md:hidden">Transparent upfront pricing with zero hidden fees. We provide value-driven high-end solutions.</p>
+<p class="hidden md:block text-on-surface-variant">Bespoke service doesn't have to mean overpriced. Our precision saves you money long-term.</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-8 reveal-timeline-item">
+<div class="md:w-1/2 text-right hidden md:block">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Fast 60-Min Response</h3>
+<p class="text-on-surface-variant">Our fleet is equipped with GPS dispatching to reach any luxury estate within the hour.</p>
+</div>
+<div class="z-10 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white shrink-0 shadow-lg">3</div>
+<div class="md:w-1/2">
+<h3 class="font-headline-md text-headline-md text-primary mb-2 md:hidden">Fast 60-Min Response</h3>
+<div class="glass-panel p-6 rounded-2xl md:ml-0 ml-12">
+<span class="material-symbols-outlined text-secondary block mb-2">speed</span>
+<p class="text-on-surface-variant md:hidden">Our fleet is equipped with GPS dispatching to reach any luxury estate within the hour.</p>
+<p class="hidden md:block text-on-surface-variant">Time is luxury. We arrive quickly, solve efficiently, and leave no trace behind.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!---Newsletter Section-->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto glass-panel rounded-[3rem] p-8 md:p-20 text-center relative overflow-hidden shadow-2xl border-2 border-white/50">
+<!-- Decorative Elements -->
+<div class="absolute -top-24 -left-24 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<div class="w-20 h-20 bg-white/80 rounded-2xl flex items-center justify-center text-primary shadow-lg mx-auto mb-8">
+<span class="material-symbols-outlined text-4xl">mark_email_unread</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Stay Ahead of the Flow</h2>
+<p class="font-body-lg text-on-surface-variant mb-10">Subscribe to our monthly newsletter for exclusive maintenance tips, luxury plumbing trends, and seasonal system checks.</p>
+<form class="flex flex-col sm:flex-row gap-4" onsubmit="return validateForm(event)">
+<input class="flex-1 px-8 py-4 rounded-full border border-outline-variant bg-white/60 backdrop-blur-md focus:ring-2 focus:ring-primary outline-none transition-all placeholder:text-on-surface-variant/60" placeholder="Your professional email" required="" type="email"/>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-label-md font-bold hover:scale-105 transition-transform shadow-xl active:scale-95" type="submit">Join Circle</button>
+</form>
+<p class="text-[10px] text-on-surface-variant mt-6 uppercase tracking-widest opacity-60">Zero spam. Pure excellence. Unsubscribe anytime.</p>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-section-gap overflow-hidden bg-primary text-white" id="testimonials">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid lg:grid-cols-3 gap-20 items-center">
+<div class="reveal-fade">
+<span class="font-label-md text-secondary-container tracking-widest uppercase mb-4 block">Testimonials</span>
+<h2 class="font-headline-lg text-headline-lg mb-6">Voices of Excellence</h2>
+<p class="font-body-lg text-body-lg text-primary-fixed-dim mb-8">Join over 5,000 elite estate owners who trust HydroPrecision for their most critical home systems.</p>
+<div class="flex items-center gap-4">
+<div class="flex -space-x-3">
+<img alt="Client 1" class="w-10 h-10 rounded-full border-2 border-primary object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAperHStw98RR-Kga-k4iAOQ4qVCahdOkhM7oqskR2yyd76OY9rgqeUeAO2HY0n6B1-9Hr1IvPScKc8NySTp5Tq-c0RAaYaaCwELsNN7tCZwCbr36dC84edUDcPHPoOMD2n-wN_zz9moJOWju-wdmyW7iFzUlx3eUfwCdTkhYLzjx2lgkIb2OJs_xs3G127ax7wGLCPKlYv-wZhOhK4HnUo70Acu3MO1-AedVCPkP4QgrVknocO0ZB1eVl22dFShQI0TUa03_JFRWTD"/>
+<img alt="Client 2" class="w-10 h-10 rounded-full border-2 border-primary object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUE3pDpdQg7bucKqxvGOEJPhToLpgZ48J3y1JcPAvH9r-Saf6EJnYuB4vhkP1-ABYV6FLpDGFDoGuy-6lRZsSmY7tyPud3siDyDZVNF2VM2ppVhMm-B0Ng76KXkpIlI3h2_3qD7bfSraPYbnlnNtJ1y3mNl9QXkHuL9NVQyK5JwIiM-22BXDH8k9kVIj3WkoZw-Esg3SNJF0XkxdUd-ehAYAGt9nqZtyhKhNy9R7J5nWc5_MKyIPG267Vln6hYNMyzMr1WNUV9iS-Z"/>
+<div class="w-10 h-10 rounded-full border-2 border-primary bg-secondary flex items-center justify-center text-[10px] font-bold">+5k</div>
+</div>
+<span class="text-xs text-primary-fixed-dim uppercase tracking-widest font-bold">Client Community</span>
+</div>
+</div>
+<div class="lg:col-span-2 relative">
+<div class="flex gap-6 overflow-x-auto pb-10 snap-x no-scrollbar mask-insight">
+<div class="min-w-[300px] md:min-w-[450px] glass-panel bg-white/10 p-10 rounded-3xl border-white/20 snap-center">
+<div class="flex gap-1 text-secondary-container mb-6">
+<span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+</div>
+<p class="font-body-md text-lg mb-8 italic">"The absolute gold standard. They treated my estate with immense respect and resolved a complex multi-zone leak that baffled three previous firms. Highly recommended."</p>
+<div class="flex items-center gap-4">
+<img alt="Sarah J. Wellington" class="w-14 h-14 rounded-full object-cover border-2 border-white/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAperHStw98RR-Kga-k4iAOQ4qVCahdOkhM7oqskR2yyd76OY9rgqeUeAO2HY0n6B1-9Hr1IvPScKc8NySTp5Tq-c0RAaYaaCwELsNN7tCZwCbr36dC84edUDcPHPoOMD2n-wN_zz9moJOWju-wdmyW7iFzUlx3eUfwCdTkhYLzjx2lgkIb2OJs_xs3G127ax7wGLCPKlYv-wZhOhK4HnUo70Acu3MO1-AedVCPkP4QgrVknocO0ZB1eVl22dFShQI0TUa03_JFRWTD"/>
+<div>
+<h4 class="font-label-md text-white font-bold">Sarah J. Wellington</h4>
+<p class="text-xs text-primary-fixed-dim uppercase tracking-wider">Estate Owner, Beverly Hills</p>
+</div>
+</div>
+</div>
+<div class="min-w-[300px] md:min-w-[450px] glass-panel bg-white/10 p-10 rounded-3xl border-white/20 snap-center">
+<div class="flex gap-1 text-secondary-container mb-6">
+<span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+</div>
+<p class="font-body-md text-lg mb-8 italic">"As a manager of commercial luxury portfolios, I need reliability. HydroPrecision's digital reporting and rapid response times are simply unmatched in the industry."</p>
+<div class="flex items-center gap-4">
+<img alt="Michael Chen" class="w-14 h-14 rounded-full object-cover border-2 border-white/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUE3pDpdQg7bucKqxvGOEJPhToLpgZ48J3y1JcPAvH9r-Saf6EJnYuB4vhkP1-ABYV6FLpDGFDoGuy-6lRZsSmY7tyPud3siDyDZVNF2VM2ppVhMm-B0Ng76KXkpIlI3h2_3qD7bfSraPYbnlnNtJ1y3mNl9QXkHuL9NVQyK5JwIiM-22BXDH8k9kVIj3WkoZw-Esg3SNJF0XkxdUd-ehAYAGt9nqZtyhKhNy9R7J5nWc5_MKyIPG267Vln6hYNMyzMr1WNUV9iS-Z"/>
+<div>
+<h4 class="font-label-md text-white font-bold">Michael Chen</h4>
+<p class="text-xs text-primary-fixed-dim uppercase tracking-wider">Director, Axis Property Group</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="max-w-3xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-12 text-center reveal-fade">Service FAQ</h2>
+<div class="space-y-4">
+<div class="faq-item glass-panel rounded-2xl overflow-hidden border border-outline-variant/30">
+<button class="w-full p-6 text-left flex justify-between items-center bg-white/50 hover:bg-surface-container-low transition-colors group">
+<span class="font-headline-md text-headline-md text-primary text-lg">Do you offer 24/7 emergency services?</span>
+<span class="material-symbols-outlined transition-transform duration-300 group-[.active]:rotate-180">expand_more</span>
+</button>
+<div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+<div class="p-6 pt-0 font-body-md text-on-surface-variant">
+                                Yes, we operate a dedicated rapid-response team 24 hours a day, 7 days a week, including all public holidays. Our average arrival time is under 60 minutes for priority zones.
+                            </div>
+</div>
+</div>
+<div class="faq-item glass-panel rounded-2xl overflow-hidden border border-outline-variant/30">
+<button class="w-full p-6 text-left flex justify-between items-center bg-white/50 hover:bg-surface-container-low transition-colors group">
+<span class="font-headline-md text-headline-md text-primary text-lg">Are your technicians master licensed and bonded?</span>
+<span class="material-symbols-outlined transition-transform duration-300 group-[.active]:rotate-180">expand_more</span>
+</button>
+<div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+<div class="p-6 pt-0 font-body-md text-on-surface-variant">
+                                Absolutely. Every lead technician is a Master Plumber. We are fully bonded and carry $10M in liability insurance to ensure complete peace of mind for our luxury clients.
+                            </div>
+</div>
+</div>
+<div class="faq-item glass-panel rounded-2xl overflow-hidden border border-outline-variant/30">
+<button class="w-full p-6 text-left flex justify-between items-center bg-white/50 hover:bg-surface-container-low transition-colors group">
+<span class="font-headline-md text-headline-md text-primary text-lg">What kind of high-tech detection do you use?</span>
+<span class="material-symbols-outlined transition-transform duration-300 group-[.active]:rotate-180">expand_more</span>
+</button>
+<div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+<div class="p-6 pt-0 font-body-md text-on-surface-variant">
+                                We utilize ultrasonic acoustic sensors, infrared thermal cameras, and micro-video fiber optics to locate issues behind walls or under floors without causing structural damage.
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-section-gap bg-surface-container-high overflow-hidden" id="contact">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid lg:grid-cols-2 gap-20 items-stretch">
+<div class="flex flex-col justify-center reveal-contact-left">
+<span class="font-label-md text-secondary tracking-widest uppercase mb-4 block">Concierge Support</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Start Your Transformation</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">Whether it’s a modern system upgrade or a midnight emergency, our concierge team is ready. Contact us for a bespoke consultation.</p>
+<div class="space-y-8">
+<div class="flex items-center gap-6">
+<div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-primary shadow-lg border border-white/50">
+<span class="material-symbols-outlined text-2xl">call</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary font-bold">Direct Line</h4>
+<p class="text-on-surface-variant">+256 (705) 077-114</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-primary shadow-lg border border-white/50">
+<span class="material-symbols-outlined text-2xl">mail</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary font-bold">Private Email</h4>
+<p class="text-on-surface-variant">kamyukaalphajoachim@gmail.com</p>
+</div>
+</div>
+</div>
+</div>
+<div class="reveal-contact-right">
+<form class="glass-panel p-8 md:p-12 rounded-[2.5rem] shadow-2xl border border-white/50 space-y-6" onsubmit="return validateForm(event)">
+<div class="grid sm:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-primary ml-1 font-bold">Full Name</label>
+<input class="w-full bg-white border border-outline-variant/30 rounded-xl p-4 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Enter name" required="" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-primary ml-1 font-bold">Phone</label>
+<input class="w-full bg-white border border-outline-variant/30 rounded-xl p-4 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="+256 (705) 077-114" required="" type="tel"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-primary ml-1 font-bold">Service Type</label>
+<select class="w-full bg-white border border-outline-variant/30 rounded-xl p-4 focus:ring-2 focus:ring-primary outline-none appearance-none cursor-pointer">
+<option>Emergency Repair</option>
+<option>Smart System Installation</option>
+<option>Modern Estate Maintenance</option>
+<option>Luxury Remodel Consulting</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-primary ml-1 font-bold">Detailed Request</label>
+<textarea class="w-full bg-white border border-outline-variant/30 rounded-xl p-4 focus:ring-2 focus:ring-primary outline-none min-h-[120px]" placeholder="How can we assist you today?"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-5 rounded-2xl font-headline-md text-headline-md hover:shadow-[0px_20px_40px_rgba(0,53,95,0.3)] transition-all active:scale-[0.98] font-bold" type="submit">Request Priority Consultation</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest border-t border-outline-variant pt-20 pb-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-16">
+<div class="col-span-1 md:col-span-1">
+<h2 class="font-headline-lg text-headline-lg font-bold text-primary mb-6">HydroPrecision</h2>
+<p class="font-body-md text-on-surface-variant max-w-xs">The gold standard in luxury plumbing and hydraulics for elite residential and commercial properties.</p>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-md text-label-md text-primary uppercase tracking-widest font-bold">Services</h4>
+<ul class="space-y-2 font-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#services">Emergency Repairs</a></li>
+<li><a class="hover:text-primary transition-colors" href="#services">Leak Detection</a></li>
+<li><a class="hover:text-primary transition-colors" href="#services">Smart Installations</a></li>
+<li><a class="hover:text-primary transition-colors" href="#services">Commercial Care</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-md text-label-md text-primary uppercase tracking-widest font-bold">Company</h4>
+<ul class="space-y-2 font-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#about">Our Legacy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#insights">Insights Blog</a></li>
+<li><a class="hover:text-primary transition-colors" href="#contact">Private Booking</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Estate Portal</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-md text-label-md text-primary uppercase tracking-widest font-bold">Connect</h4>
+<div class="flex gap-4">
+<a aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="#"><span class="material-symbols-outlined">share</span></a>
+<a aria-label="Instagram" class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="#"><span class="material-symbols-outlined">public</span></a>
+</div>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest leading-loose">© 2024 HydroPrecision Services.<br/>Licensed Master Plumbers.</p>
+</div>
+</div>
+</footer>
+<script>
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Reveal
+        gsap.from(".reveal-hero", {
+            y: 50,
+            opacity: 0,
+            duration: 1.2,
+            stagger: 0.2,
+            ease: "power4.out",
+            delay: 0.3
+        });
+
+        // Scroll Reveal Animations
+        const reveals = [
+            { selector: ".reveal-fade", vars: { opacity: 0, y: 30 } },
+            { selector: ".reveal-service", vars: { opacity: 0, scale: 0.95, stagger: 0.1 } },
+            { selector: ".reveal-about-left", vars: { opacity: 0, x: -60 } },
+            { selector: ".reveal-about-right", vars: { opacity: 0, x: 60 } },
+            { selector: ".reveal-contact-left", vars: { opacity: 0, x: -40 } },
+            { selector: ".reveal-contact-right", vars: { opacity: 0, x: 40 } }
+        ];
+
+        reveals.forEach(reveal => {
+            gsap.from(reveal.selector, {
+                ...reveal.vars,
+                duration: 1.2,
+                scrollTrigger: {
+                    trigger: reveal.selector,
+                    start: "top 85%",
+                    toggleActions: "play none none none"
+                }
+            });
+        });
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            gsap.to(counter, {
+                innerText: target,
+                duration: 2.5,
+                snap: { innerText: 1 },
+                scrollTrigger: {
+                    trigger: counter,
+                    start: "top 90%"
+                }
+            });
+        });
+
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-item button').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const content = item.querySelector('.faq-content');
+                const isActive = item.classList.contains('active');
+                
+                // Close all others
+                document.querySelectorAll('.faq-item').forEach(other => {
+                    if (other !== item) {
+                        other.classList.remove('active');
+                        other.querySelector('button').classList.remove('active');
+                        other.querySelector('.faq-content').style.maxHeight = '0';
+                    }
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                    button.classList.add('active');
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    item.classList.remove('active');
+                    button.classList.remove('active');
+                    content.style.maxHeight = '0';
+                }
+            });
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        });
+
+        // Close menu on click outside or anchor click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                menu.classList.remove('flex');
+            });
+        });
+
+        // Service Card Tilt Effect
+        const cards = document.querySelectorAll('.service-card');
+        cards.forEach(card => {
+            const inner = card.querySelector('.tilt-inner');
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 12;
+                const rotateY = (centerX - x) / 12;
+                inner.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                inner.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+            });
+        });
+
+        function validateForm(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = "Sending Request...";
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                alert("Thank you! Your priority request has been received. A HydroPrecision concierge will contact you within 60 minutes.");
+                btn.innerText = originalText;
+                btn.disabled = false;
+                e.target.reset();
+            }, 1500);
+            
+            return false;
+        }
+    </script>
+</body></html>
